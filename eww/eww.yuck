@@ -1,0 +1,42 @@
+(defwidget powerbuttons []
+    (box
+        :class "powerbuttonsbox"
+        (button
+            :class "powerbutton"
+            :onclick "eww close powermenu && swaylock -f -c 414559"
+            "" 
+        )
+        (button
+            :class "powerbutton"
+            :onclick "eww close powermenu && systemctl suspend"
+            "" 
+        )
+        (button
+            :class "powerbutton"
+            :onclick "reboot"
+            "" 
+        )
+        (button
+            :class "powerbutton"
+            :onclick "poweroff"
+            "" 
+        )
+        (button
+            :class "powerbutton"
+            :onclick "eww close powermenu"
+            "" 
+        ) 
+    )
+)
+
+(defwindow powermenu 
+    :geometry (geometry 
+        :width "1000px"
+        :height "200px"
+        :anchor "center")
+    :stacking "fg"
+    :exclusive false
+    :monitor 0
+    :class "powermenu"
+    (powerbuttons)
+)

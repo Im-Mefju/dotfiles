@@ -1,0 +1,53 @@
+{
+    "layer": "top",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["idle_inhibitor","sway/language","network", "wireplumber", "backlight", "cpu", "battery", "custom/power"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "{:%a, %d. %b  %H:%M}"
+    },
+    "wireplumber": {
+    	"format": "{volume}% {icon}",
+	"format-muted": "",
+	"format-icons": ["", ""]
+    },
+    "backlight": {
+    	"format": "{percent}% {icon}",
+	"format-icons": ""
+    },
+    "network": {
+    	"interface": "wlp2s0",
+	"format-wifi": "",
+	"format-disconnected": "  !",
+	"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+	"tooltip-format-disconnected": "Disconnected"
+    },
+    "cpu": {
+    	"interval": 10,
+	"format": "{usage}% "
+    },
+    "idle_inhibitor": {
+    	"format": "{icon}",
+	"format-icons": {
+		"activated": "",
+		"deactivated": ""
+	}
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "eww open powermenu"
+    },
+    "mpris": {
+        "format": "{player}" 
+    },
+    "sway/language": {
+        "format": "{short} "
+    }
+}

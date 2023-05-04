@@ -1,0 +1,146 @@
+@import "frappe.css";
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 28px;
+}
+
+window#waybar {
+    background: none;
+    /* border-bottom: 3px solid @crust; */
+    color: white;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+#workspaces {
+    background-color: @base;
+    border: 2px solid @blue;
+    border-left: 0;
+    border-radius: 50px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    background: @blue;
+}
+.modules-left, #workspaces button.focused:last-child {
+    border-radius: 50px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#mode, #clock, #battery {
+    padding: 0 15px;
+}
+
+#mode {
+    background: @base;
+    border: 2px solid @blue;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+
+#clock {
+}
+#cpu {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#battery {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#battery.charging {
+    color: white;
+    background-color: @green;
+    border-bottom: 3px solid shade(@green, 0.7);
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.modules-right, .modules-center {
+    background-color: @base;
+}
+/* .modules-left {
+    border: 2px solid @blue;
+    border-left: 0;
+    border-radius: 50px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+} */
+.modules-center {
+    border-radius: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid @blue;
+}
+.modules-right {
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid @blue;
+    border-right: 0;
+    border-radius: 50px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#backlight {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#wireplumber {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#wireplumber.muted {
+    background-color: @red;
+    border-bottom: 3px solid shade(@red, 0.7);
+}
+#network {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#idle_inhibitor {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#idle_inhibitor.activated {
+    background-color: @red;
+    border-bottom: 3px solid shade(@red, 0.7);
+}
+#language {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#custom-power {
+    padding-left: 10px;
+}
